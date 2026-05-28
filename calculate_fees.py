@@ -1,0 +1,44 @@
+import json
+
+def calculate_total_fees(data):
+    total_fees = sum(data["fees"].values())
+    return total_fees
+
+data = {
+  "patient_info": {
+    "name": "Lin Yixin",
+    "id_number": "A230084535",
+    "case_number": 26386322,
+    "dates": ["2026-05-25", "2026-05-26"]
+  },
+  "fees": {
+    "medication_fee": 1288,
+    "materials_fee": 683,
+    "nursing_fee": 100,
+    "treatment_fee": 1376,
+    "meal_fee": 0,
+    "out_of_pocket_expenses": 1500,
+    "balance_due": 4947,
+    "consultation_fee": 1240,
+    "ward_fee": 1000,
+    "examination_fee": 1079,
+    "treatment_fee_2": 967,
+    "surgery_fee": 0,
+    "special_materials_fee": 0,
+    "pharmacy_service_fee": 0,
+    "injection_technique_fee": 231
+  },
+  "health_insurance_points": 26478,
+  "physician": {
+    "name": "Kao Hsiao-Wen",
+    "department": "AF",
+    "visit_number": 6322
+  },
+  "payment": {
+    "receipt_number": "P0756000672",
+    "credit_card": "5206-4446-6189-4081",
+    "receipt_amount": 4947
+  }
+}
+
+print("Total Fees:", calculate_total_fees(data))
